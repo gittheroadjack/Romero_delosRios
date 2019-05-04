@@ -128,7 +128,7 @@ public class CocheServiceImpl implements CocheService {
 
 	@Override
 	public void newSell(Integer idCoche, Integer idCliente, Integer idVendedor) throws NotFoundExcept {
-		Coche soldCar = cocheDAO.findOne(idCoche);
+		Coche soldCar = Optional.ofNullable(cocheDAO.findOne(idCoche)).orElseThrow(() -> new NotFoundExcept());
 		soldCar.setFechaVenta(todaysDate());
 		addClienteToSoldCar(idCliente, soldCar);
 		addVendedorToSoldCar(idVendedor, soldCar);
