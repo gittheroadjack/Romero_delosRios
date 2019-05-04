@@ -18,6 +18,8 @@ public interface CocheService {
 
 	void delete(Integer idCoche);
 
+	void newSell(Integer idCoche, Integer idCliente, Integer idVendedor) throws NotFoundExcept;
+
 	public Coche map(CocheDTO coche);
 
 	public CocheDTO map(Coche coche);
