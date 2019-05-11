@@ -135,6 +135,13 @@ public class CocheServiceImpl implements CocheService {
 		cocheDAO.save(soldCar);
 	}
 
+	@Override
+	public void createList(List<CocheDTO> listCocheDto) {
+		for(CocheDTO cocheDTO : listCocheDto) {
+			cocheDAO.save(map(cocheDTO));
+		}
+	}
+	
 	public void addClienteToSoldCar(Integer idCliente, Coche coche) throws NotFoundExcept {
 		ClienteDTO clienteCoche = clienteService.findById(idCliente);
 		if(clienteCoche != null) {
