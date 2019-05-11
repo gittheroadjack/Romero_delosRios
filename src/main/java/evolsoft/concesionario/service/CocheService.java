@@ -29,5 +29,7 @@ public interface CocheService {
 	public List<CocheDTO> findCochesInPriceRange(Integer minPrice, Integer maxPrice);
 
 	public List<CocheDTO> findCochesInStock();
+
+	void createList(List<CocheDTO> listCocheDto);
 	
 }
