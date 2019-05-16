@@ -156,4 +156,17 @@ public class CocheServiceImpl implements CocheService {
 		}
 	}
 
+		public void addClienteToSoldCar(Integer idCliente, Coche coche) throws NotFoundExcept {
+	Optional<ClienteDTO> clienteCoche = Optional.ofNullable(clienteService.findById(idCliente));
+		if(clienteCoche.isPresent()) {
+		coche.setCliente(clienteService.map(clienteCoche));
+		}
+	}
+	public void addVendedorToSoldCar(Integer idVendedor, Coche coche) throws NotFoundExcept {
+	Optional<VendedorDTO> vendedorCoche = Optional.ofNullable(vendedorService.findById(idVendedor));
+		if(vendedorCoche.isPresent()) {
+		coche.setVendedor(vendedorService.map(vendedorCoche));
+		}
+	}
+
 }
