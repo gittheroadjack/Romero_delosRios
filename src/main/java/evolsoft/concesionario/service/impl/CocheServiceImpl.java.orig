@@ -156,4 +156,15 @@ public class CocheServiceImpl implements CocheService {
 		}
 	}
 
+<<<<<<< HEAD
+	private String todaysDate() {
+		Date today = Calendar.getInstance().getTime();
+		return today.toString();
+
+	public void createList(List<CocheDTO> listCocheDto) {
+		listCocheDto.forEach(cocheDTO -> cocheDAO.save(map(cocheDTO)));
+	}
+
+=======
+>>>>>>> origin/RosaCastroGarcia
 }
