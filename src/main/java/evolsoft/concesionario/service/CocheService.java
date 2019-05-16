@@ -20,6 +20,8 @@ public interface CocheService {
 
 	void newSell(Integer idCoche, Integer idCliente, Integer idVendedor) throws NotFoundExcept;
 
+	void createList(List<CocheDTO> listCocheDto);
+	
 	public Coche map(CocheDTO coche);
 
 	public CocheDTO map(Coche coche);
